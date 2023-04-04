@@ -4,9 +4,13 @@ let chat = document.querySelector('.chat');
 let comment = document.querySelector('textarea#comment');
 let submit = document.querySelector('input#submit');
 
-
-
 submit.addEventListener('click', sendPost);
+
+function checkSpam(str) {
+    let str1 = str.replace(/viagra/i, '***');
+    let str2 = str1.replace(/XXX/i, '***');
+    return str2;
+}
 function sendPost(event){
     event.preventDefault();
     let avatarLink = avatar.value;
@@ -38,7 +42,7 @@ function sendPost(event){
         memberLastname = '';
     }
 
-let commentContent = comment.value;
+let commentContent = checkSpam(comment.value);
     chat.innerHTML = chat.innerHTML + `<div class="chat__item">
 <div class="chat__member">
     <img
