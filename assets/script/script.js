@@ -7,15 +7,17 @@ let submit = document.querySelector("input#submit");
 submit.addEventListener("click", sendPost);
 
 function checkSpam(str) {
-    let str1 = str.replace(/viagra/i, "***");
-    let str2 = str1.replace(/XXX/i, "***");
-    return str2;
+    let str1 = str.replace(/viagra/gi, "***");
+    let str2 = str1.replace(/виагра/gi, "***");
+    let str3 = str2.replace(/XXX/gi, "***");
+    return str3;
 }
 function checkMember(str) {
     let memberNameLow = str.value.toLowerCase().trim();
     let firstSpacePosition = memberNameLow.indexOf(" ");
     let lastSpacePosition = memberNameLow.lastIndexOf(" ");
 
+    let memberNameSpace = memberNameLow.slice(firstSpacePosition + 1, lastSpacePosition);
     let memberName;
     let memberSirname;
     let memberLastname;
@@ -24,9 +26,9 @@ function checkMember(str) {
     if (
         firstSpacePosition !== -1 &&
         lastSpacePosition !== -1 &&
-        lastSpacePosition !== firstSpacePosition
+        lastSpacePosition !== firstSpacePosition &&
+        !memberNameSpace.includes(' ')
     ) {
-        console.log(lastSpacePosition);
         memberName =
             memberNameLow[0].toUpperCase() +
             memberNameLow.slice(1, firstSpacePosition);
