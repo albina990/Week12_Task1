@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+    box-sizing:border-box;
+    color:rgba(255, 255, 255, 0.774);
+    background-color: black;
+    font-family: roboto;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    
+}
+h3, .name{
+    color:rgb(49, 49, 173);
+}
+.flex-container{
+    display:flex;
+    justify-content: space-between;
+}
+.form, .chat{
+    width: 45%;
+}
+p, label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+input, textarea{
+    border: 2px dashed rgb(49, 49, 173);
+    margin-bottom: 20px;
+}
+input[type="submit"]{
+    background-color:rgb(49, 49, 173);
+    max-width: 100px;
+    padding: 5px 10px;
+}
+.chat__item{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px dashed rgb(49, 49, 173);
+    margin-bottom: 10px;
+}
+.chat__member{
+    display: flex;
+    justify-content: flex-start;
+}
+img{
+    max-width: 60px;
+    margin-right: 10px;
+    /* display: none; */
+}
+.name{
+    font-weight: 600;
+}
